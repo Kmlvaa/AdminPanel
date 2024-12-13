@@ -2,7 +2,7 @@ import { DownOutlined, FlagOutlined, MenuFoldOutlined, MenuUnfoldOutlined, Searc
 import { Button, Dropdown, Input, Menu, MenuProps } from 'antd'
 import { Header } from 'antd/es/layout/layout'
 import Image from 'next/image'
-import pp from '../../../assets/pp.png'
+import pp from '/public/assets/pp.png'
 
 export default function page(props: { collapsed: any; toggleCollapsed: React.MouseEventHandler<HTMLElement> | undefined }) {
 
@@ -12,12 +12,12 @@ export default function page(props: { collapsed: any; toggleCollapsed: React.Mou
     ]
 
     return (
-        <Header className={`bg-white top-0 right-0 h-20 ${props.collapsed ? 'w-11/12' : 'w-4/5'} transition-all fixed z-10 flex items-center justify-between p-3 leading-normal`}>
+        <Header className={`bg-white top-0 right-0 h-20 ${props.collapsed ? 'left-[100px]' : 'left-[250px]'} transition-all fixed z-10 flex items-center justify-between py-3 px-12 leading-normal`}>
             <div className='flex flex-row items-center gap-5 w-1/2'>
                 <Button shape='circle' size='large' onClick={props.toggleCollapsed} className='border-0'>
                     {props.collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
                 </Button>
-                <Input placeholder='Search' prefix={<SearchOutlined />} size='large' className='w-2/3 rounded-full bg-[#F5F6FA]' />
+                <Input placeholder='Search' prefix={<SearchOutlined />} size='large' className='w-2/3 rounded-full h-auto bg-[#F5F6FA]' />
             </div>
             <div className='w-1/3 max-lg:w-1/2 flex flex-row items-center justify-center gap-3'>
                 <div>
