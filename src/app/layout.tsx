@@ -13,11 +13,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Define routes that don't require the layout
-  const noLayoutRoutes = ["/pages/account/login",
-    "/pages/account/register/all",
-    "/pages/account/register/teacher",
-    "/pages/account/register/student"
+
+  const noLayoutRoutes = ["/login",
+    "/registerAll",
+    "/registerTeacher",
+    "/registerStudent",
+    "/capcha"
   ];
 
   const pathname = usePathname();

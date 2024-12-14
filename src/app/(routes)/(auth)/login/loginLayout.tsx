@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '../../_components/AccountLayout/page'
+import Layout from '../accountLayout'
 import { Form } from 'antd'
 
-export default function page({ children }: { children: React.ReactNode }) {
+export default function loginLayout({ children }: { children: React.ReactNode }) {
     return (
         <Layout>
             <div className='w-full h-full flex items-center justify-center'>

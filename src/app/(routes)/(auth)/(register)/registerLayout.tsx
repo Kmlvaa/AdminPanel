@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import Layout from '../AccountLayout/page'
+import Layout from '../accountLayout'
 import { Steps } from 'antd'
 
-export default function page({ children }: { children: React.ReactNode }) {
+export default function registerLayout({ children }: { children: React.ReactNode }) {
     return (
         <Layout>
             <div className='w-96 m-auto py-8 text-white'>

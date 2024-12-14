@@ -3,7 +3,7 @@ import {Input as PInput} from 'antd'
 import Link from 'next/link'
 import React from 'react'
 import CustomBtn from '../../../../_components/button/page'
-import RegisterLayout from '../../../../_components/registerLayout/page'
+import RegisterLayout from '../registerLayout'
 
 export default function page() {
 
@@ -60,7 +60,7 @@ export default function page() {
                 </div>
                 <div className='mt-10 w-2/5 m-auto flex flex-col gap-2'>
                     <CustomBtn name='Qeydiyyatdan keç' color='bg-blue-500'/>
-                    <p>Hesabınız var? <Link href='/pages/account/login' className='text-blue-500 font-semibold underline cursor-pointer'>Daxil olun</Link></p>
+                    <p>Hesabınız var? <Link href='/login' className='text-blue-500 font-semibold underline cursor-pointer'>Daxil olun</Link></p>
                 </div>
             </Form>
         </RegisterLayout>

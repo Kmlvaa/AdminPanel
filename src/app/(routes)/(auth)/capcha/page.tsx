@@ -1,16 +1,15 @@
 import React from 'react'
-import Layout from '../../../_components/loginLayout/page'
+import Layout from '../login/loginLayout'
 import { Input } from 'antd'
-import Link from 'next/link'
 import CustomBtn from '../../../_components/button/page'
-import Capcha from '../../../../assets/Frame 15.png'
+import Capcha from '../../../../../public/assets/Frame 15.png'
 import Image from 'next/image'
 
 export default function page() {
     return (
         <Layout>
             <h1 className='text-3xl font-bold mb-10'>Güvənlik kodu</h1>
-            <div>
+            <div className='flex items-center justify-center'>
                 <Image src={Capcha} alt='capcha code' />
             </div>
             <Input type='text' placeholder='Mətni bura daxil edin' size='large' />

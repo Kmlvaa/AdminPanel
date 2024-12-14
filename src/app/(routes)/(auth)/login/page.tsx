@@ -1,8 +1,7 @@
 'use client'
 import React, { useState } from 'react'
-import Layout from '../../../_components/loginLayout/page'
-import { Checkbox, Form, Input, Space } from 'antd'
-import { Input as Pinput } from 'antd'
+import Layout from './loginLayout'
+import { Checkbox, Input } from 'antd'
 import CustomBtn from '../../../_components/button/page'
 import Link from 'next/link'
 
@@ -40,7 +39,7 @@ export default function page() {
       </div>
       <div className='mt-10 w-4/5 m-auto'>
         <CustomBtn name='Daxil ol' color='bg-blue-500'/>
-        <p>Hesabın yoxdur? <Link href='/pages/account/register/all' className='text-blue-500 font-semibold underline cursor-pointer'>Hesab yarat</Link></p>
+        <p>Hesabın yoxdur? <Link href='/registerAll' className='text-blue-500 font-semibold underline cursor-pointer'>Hesab yarat</Link></p>
       </div>
     </Layout>
   )

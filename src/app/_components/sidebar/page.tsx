@@ -20,9 +20,9 @@ export default function page(props: { collapsed: any; toggleCollapsed: any }) {
 
     const items = [
         { key: 1, icon: <HomeOutlined />, label: 'Dashboard', link: '/' },
-        { key: 2, icon: <FormOutlined />, label: 'Imtahanlar', link: '/pages/admin/exam' },
-        { key: 3, icon: <BellOutlined />, label: 'Bildirişlər', link: '/pages/admin/notifications' },
-        { key: 4, icon: <AppstoreOutlined />, label: 'Kateqoriyalar', link: '/' },
+        { key: 2, icon: <FormOutlined />, label: 'Imtahanlar', link: '/exam' },
+        { key: 3, icon: <BellOutlined />, label: 'Bildirişlər', link: '/notifications' },
+        { key: 4, icon: <AppstoreOutlined />, label: 'Kateqoriyalar', link: '/category' },
         { key: 5, icon: <CreditCardOutlined />, label: 'Ödənişlər', link: '/' },
         { key: 6, icon: <UserOutlined />, label: 'Hesab', link: '/' },
         { key: 7, icon: <SettingOutlined />, label: 'Ayarlar', link: '/' },
