@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Layout from './loginLayout'
 import { Checkbox, Input } from 'antd'
-import CustomBtn from '../../../_components/button/page'
+import CustomBtn from '../../../_components/button'
 import Link from 'next/link'
 
 export default function page() {

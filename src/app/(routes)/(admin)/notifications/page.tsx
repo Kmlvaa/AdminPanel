@@ -1,6 +1,6 @@
 import React from 'react'
-import ContentHeader from '../../../_components/contentHeader/page'
-import Notification from '../../../_components/notification/page'
+import ContentHeader from '../../../_components/mainLayout/contentHeader'
+import Notification from '../../../_components/notification'
 import Link from 'next/link';
 
 export default function page() {
@@ -25,18 +25,20 @@ export default function page() {
                 <div>
                     <ContentHeader header='Bildirişlər' />
                 </div>
-                    <Link href='/' className='underline text-blue-500 font-semibold'>Gözdən keçir</Link>
             </div>
-            <div className='py-14'>
+            <div className='pt-5'>
                 <div className=''>
                     <ul className='flex flex-col gap-10'>
                         {messages.map((message) => {
                             return (
                                 <li key={message.id}>
-                                    <p className='font-semibold mb-3'>{message.name}</p>
+                                    <div className='flex flex-row items-center justify-between'>
+                                        <p className='font-semibold mb-3'>{message.name}</p>
+                                        {message.id == 1 ? <Link href='/' className='underline text-blue-500 font-semibold hover:underline hover:text-red-600'>Gözdən keçir</Link> : <></>}
+                                    </div>
                                     <div>
-                                        <Notification />
-                                        <Notification />
+                                        <Notification title='Meeting with CEO' />
+                                        <Notification title='Meeting with CEO' />
                                     </div>
                                 </li>
                             )

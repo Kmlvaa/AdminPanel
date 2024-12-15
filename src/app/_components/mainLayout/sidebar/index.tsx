@@ -12,11 +12,11 @@ import {
     SettingOutlined,
     UserOutlined,
 } from '@ant-design/icons';
-import xLogo from '../../../../public/assets/xAcademyLogo.svg'
-import collapsedLogo from '../../../../public/assets/Union.svg'
+import xLogo from '../../../../../public/assets/xAcademyLogo.svg'
+import collapsedLogo from '../../../../../public/assets/Union.svg'
 import { useRouter } from 'next/navigation';
 
-export default function page(props: { collapsed: any; toggleCollapsed: any }) {
+export default function index(props: { collapsed: any; toggleCollapsed: any }) {
 
     const items = [
         { key: 1, icon: <HomeOutlined />, label: 'Dashboard', link: '/' },
@@ -24,8 +24,8 @@ export default function page(props: { collapsed: any; toggleCollapsed: any }) {
         { key: 3, icon: <BellOutlined />, label: 'Bildirişlər', link: '/notifications' },
         { key: 4, icon: <AppstoreOutlined />, label: 'Kateqoriyalar', link: '/category' },
         { key: 5, icon: <CreditCardOutlined />, label: 'Ödənişlər', link: '/' },
-        { key: 6, icon: <UserOutlined />, label: 'Hesab', link: '/' },
-        { key: 7, icon: <SettingOutlined />, label: 'Ayarlar', link: '/' },
+        { key: 6, icon: <UserOutlined />, label: 'Hesab', link: '/accountSettings/editProfile' },
+        { key: 7, icon: <SettingOutlined />, label: 'Ayarlar', link: '/settings/general' },
     ]
 
     const router = useRouter();

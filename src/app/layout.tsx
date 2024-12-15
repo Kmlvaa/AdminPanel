@@ -2,8 +2,8 @@
 import "./globals.css";
 import { Layout, Menu } from "antd";
 import { Content } from "antd/es/layout/layout";
-import Sidebar from '../app/_components/sidebar/page';
-import Header from './_components/header/page';
+import Sidebar from './_components/mainLayout/sidebar';
+import Header from './_components/mainLayout/header';
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 // import 'antd/dist/antd.css'; 

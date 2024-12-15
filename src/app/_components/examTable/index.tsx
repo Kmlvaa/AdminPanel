@@ -3,7 +3,7 @@ import { Table } from 'antd'
 import { usePathname, useSearchParams } from 'next/navigation';
 import React, { useState } from 'react'
 
-export default function page() {
+export default function index() {
 
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 

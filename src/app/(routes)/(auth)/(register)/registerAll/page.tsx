@@ -1,22 +1,12 @@
-import { Cascader, Checkbox, Form, Input } from 'antd'
-import {Input as PInput} from 'antd'
+import { Cascader, Checkbox, Form, Input, Select } from 'antd'
+import { Input as PInput } from 'antd'
 import Link from 'next/link'
 import React from 'react'
-import CustomBtn from '../../../../_components/button/page'
+import CustomBtn from '../../../../_components/button'
 import RegisterLayout from '../registerLayout'
+import { Option } from 'antd/es/mentions'
 
 export default function page() {
-
-    const options = [
-        {
-            value: 'teacher',
-            label: 'teacher',
-        },
-        {
-            value: 'student',
-            label: 'student',
-        },
-    ];
 
     return (
         <RegisterLayout>
@@ -35,7 +25,7 @@ export default function page() {
                 <div className='flex flex-row items-center justify-center w-full gap-5'>
                     <div className='flex flex-col justify-between items-start w-full'>
                         <label className='text-gray-800'>Password</label>
-                        <Input type='password' size='large'/>
+                        <Input type='password' size='large' />
                         {/* <Input.Password placeholder='Password daxil edin' size='large' className='Input-field' style={{ backgroundColor: '#F5F6FA' }} /> */}
                     </div>
                     <div className='flex !flex-col items-start gap-2 w-full'>
@@ -49,17 +39,20 @@ export default function page() {
                             <label className='text-gray-800'>Password</label>
                         </div>
                         {/* <Input.Password placeholder='Password daxil edin' size='large' className='Input-field' style={{ backgroundColor: '#F5F6FA' }} /> */}
-                        <Input type='password' size='large'/>
+                        <Input type='password' size='large' />
                         {/* to show error set property status='error' in input */}
                         <Checkbox>Remember Password</Checkbox>
                     </div>
                     <div className='flex !flex-col items-start gap-2 w-full'>
                         <label className='text-gray-800'>Rolunuzu seçin</label>
-                        <Cascader options={options} placeholder="Rolu secin" style={{ width: '100%', backgroundColor: '#F5F6FA' }} size='large' />
+                        <Select className='w-full' size='large' options={[
+                            {id: 1, value: 'teacher', label: <span>Teacher</span> },
+                            {id: 2, value: 'student', label: <span>Student</span> },
+                        ]}/>
                     </div>
                 </div>
                 <div className='mt-10 w-2/5 m-auto flex flex-col gap-2'>
-                    <CustomBtn name='Qeydiyyatdan keç' color='bg-blue-500'/>
+                    <CustomBtn name='Qeydiyyatdan keç' color='bg-blue-500' />
                     <p>Hesabınız var? <Link href='/login' className='text-blue-500 font-semibold underline cursor-pointer'>Daxil olun</Link></p>
                 </div>
             </Form>

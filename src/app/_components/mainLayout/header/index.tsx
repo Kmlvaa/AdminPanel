@@ -4,7 +4,7 @@ import { Header } from 'antd/es/layout/layout'
 import Image from 'next/image'
 import pp from '/public/assets/pp.png'
 
-export default function page(props: { collapsed: any; toggleCollapsed: React.MouseEventHandler<HTMLElement> | undefined }) {
+export default function index(props: { collapsed: any; toggleCollapsed: React.MouseEventHandler<HTMLElement> | undefined }) {
 
     const items: MenuProps['items'] = [
         { key: 1, icon: <FlagOutlined />, label: 'Eng' },

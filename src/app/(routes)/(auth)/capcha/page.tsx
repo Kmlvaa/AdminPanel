@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../login/loginLayout'
 import { Input } from 'antd'
-import CustomBtn from '../../../_components/button/page'
+import CustomBtn from '../../../_components/button'
 import Capcha from '../../../../../public/assets/Frame 15.png'
 import Image from 'next/image'
 

@@ -2,7 +2,7 @@ import { Card, Statistic } from 'antd'
 import Image from 'next/image'
 import React from 'react'
 
-export default function page(props: { title: string; statisticValue: any; statistic: string; totalValue: any; color: string; imageUrl: any; icon: any }) {
+export default function index(props: { title: string; statisticValue: any; statistic: string; totalValue: any; color: string; imageUrl: any; icon: any }) {
     console.log(props.imageUrl)
     return (
         <Card bordered={false} className="w-80 hover:bg-gray-100">

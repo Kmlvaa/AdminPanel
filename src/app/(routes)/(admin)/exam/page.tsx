@@ -1,10 +1,11 @@
 import React from 'react'
-import Header from '../../../_components/contentHeader/page'
+import Header from '../../../_components/mainLayout/contentHeader'
 import { DownOutlined, FilterOutlined, ReloadOutlined } from '@ant-design/icons'
 import { Button, Dropdown, Menu, MenuProps } from 'antd'
-import Table from '../../../_components/examTable/page'
+import Table from '../../../_components/examTable'
 import { PlusOutlined } from '@ant-design/icons';
-import CustomBtn from '../../../_components/button/page'
+import CustomBtn from '../../../_components/button'
+import Link from 'next/link'
 
 export default function page() {
 
@@ -23,13 +24,13 @@ export default function page() {
     ]
 
     return (
-        <div className='flex flex-col gap-5'>
+        <div className='flex flex-col gap-3'>
             <div className="flex flex-row items-center justify-between">
                 <div>
                     <Header header='Imtahanlar' />
                 </div>
                 <div>
-                    <CustomBtn name=' Yeni imtahan yarat' color='bg-blue-500' prefix={<PlusOutlined />} />
+                    <Link href='/exam/createExam'><CustomBtn name=' Yeni imtahan yarat' color='bg-blue-500' prefix={<PlusOutlined />} /></Link>
                 </div>
             </div>
             <div className='flex flex-row items-center justify-between w-2/3 py-2 px-5 border-[1px] border-gray-300 rounded-lg font-semibold'>
