@@ -32,7 +32,6 @@ export default function index(props: { collapsed: any; toggleCollapsed: any }) {
 
     const onClick: MenuProps['onClick'] = (e) => {
         const item = items.find(x => x.key == Number(e.key))
-        console.log(item)
         router.push(`http://localhost:3000//${item?.link}`)
     };
     return (
