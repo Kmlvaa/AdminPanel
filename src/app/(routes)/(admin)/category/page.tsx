@@ -16,7 +16,7 @@ export default function page() {
     <div>
       {categories?.map((category) => {
         return (
-          <div>
+          <div key={category.id}>
             <div key={category.id} className='flex flex-row items-center justify-between border-[1px] border-gray-300 hover:bg-[#F5F6FA]  p-7 rounded-lg my-2'>
               <div>
                 <p>{category.title}</p>
