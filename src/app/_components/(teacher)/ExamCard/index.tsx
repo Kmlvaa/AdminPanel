@@ -6,7 +6,7 @@ import React from 'react'
 export default function index(props: any) {
     return (
         <Card className='w-auto h-full rounded-lg p-3'>
-            <Image src={props.image} alt='image card' width={250} height={250} className='cover'/>
+            <Image src={props.image} alt='image card' width={250} height={250} className='cover w-64 h-64'/>
             <div className='flex flex-col gap-10'>
                 <div className='flex flex-row items-center justify-between'>
                     <div>

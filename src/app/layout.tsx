@@ -18,7 +18,8 @@ export default function RootLayout({
     "/registerAll",
     "/registerTeacher",
     "/registerStudent",
-    "/capcha"
+    "/capcha",
+    "/student"
   ];
 
   const pathname = usePathname();
