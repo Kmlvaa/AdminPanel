@@ -10,8 +10,8 @@ export default function page({ children }: { children: React.ReactNode }) {
             <Header header='Hesab ayarları' />
             <div className='w-full h-full shadow-[0px_0px_7px_0px_rgba(0,_0,_0,_0.1)] rounded-2xl p-7'>
                 <div className='flex flex-row items-start gap-10 border-b-[1px] border-b-gray-200 font-semibold'>
-                    <NavLink title="Profili düzəlt" url="/accountSettings/editProfile"/>
-                    <NavLink title="Təhlükəsizlik" url="/accountSettings/security"/>
+                    <NavLink title="Profili düzəlt" url="/dashboard/accountSettings/editProfile"/>
+                    <NavLink title="Təhlükəsizlik" url="/dashboard/accountSettings/security"/>
                 </div>
                 {children}
             </div>

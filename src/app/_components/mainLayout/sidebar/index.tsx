@@ -2,57 +2,45 @@
 import { Menu, MenuProps } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 import Image from 'next/image';
-import Icon, {
-    AppstoreOutlined,
-    BellOutlined,
-    CreditCardOutlined,
-    FormOutlined,
-    HomeOutlined,
-    LogoutOutlined,
-    SettingOutlined,
-    UserOutlined,
-} from '@ant-design/icons';
+import { LogoutOutlined } from '@ant-design/icons';
 import xLogo from '../../../../../public/assets/xAcademyLogo.svg'
 import collapsedLogo from '../../../../../public/assets/Union.svg'
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { ReactNode, useEffect, useState } from 'react';
 
-export default function index(props: { collapsed: any; toggleCollapsed: any }) {
+type MenuItemType = {
+    key: number;
+    icon: ReactNode;
+    label: string;
+    link?: string;
+    children?: MenuItemType[];
+};
+
+export default function index(props: { collapsed: any; toggleCollapsed: any; items: MenuItemType[] }) {
 
     const [key, setKey] = useState('1')
-
     const router = useRouter();
     const pathname = usePathname();
 
-    const items = [
-        { key: 1, icon: <HomeOutlined />, label: 'Dashboard', link: '/', teachLink: '/dashboard' },
-        { key: 2, icon: <FormOutlined />, label: 'Imtahanlar', link: '/exam', teachLink: '/dashboard/exam' },
-        { key: 3, icon: <BellOutlined />, label: 'Bildirişlər', link: '/notifications', teachLink: '/dashboard/notifications' },
-        { key: 4, icon: <AppstoreOutlined />, label: 'Kateqoriyalar', link: '/category', teachLink: '/dashboard/category' },
-        { key: 5, icon: <CreditCardOutlined />, label: 'Ödənişlər', link: '/payment', teachLink: '/dashboard/payment' },
-        { key: 6, icon: <UserOutlined />, label: 'Hesab', link: '/accountSettings/editProfile', teachLink: '/dashboard/accountSettings/editProfile' },
-        { key: 7, icon: <SettingOutlined />, label: 'Ayarlar', link: '/settings/general', teachLink: '/dashboard/settings/general' },
-    ]
-
     const onClick: MenuProps['onClick'] = (e) => {
-        if (!pathname.includes('/dashboard')) {
-            const itemLink = items.find(x => x.key == Number(e.key))?.link
-            router.push(`http://localhost:3000//${itemLink}`)
-        }
-        else {
-            const itemLink = items.find(x => x.key == Number(e.key))?.teachLink
-            if (itemLink == '/dashboard/category') {
-                return
-            }
-            router.push(`http://localhost:3000//${itemLink}`)
+        const item = props.items.find(x => x.key == Number(e.key));
+
+        if (item) {
+            const link = item.link
+            router.push(`http://localhost:3000//${link}`)
         }
     };
 
     useEffect(() => {
-        const key = items.find(x => x.link == pathname || x.teachLink == pathname)?.key
+        const key = props.items.find(x => x.link == pathname)?.key
         setKey(String(key))
-    }, [pathname, items])
+        if (pathname == '/dashboard/accountSettings/security' || pathname == '/accountSettings/security') {
+            setKey('6')
+        }
+        if (pathname == '/settings/exam' || pathname == '/settings/payment') {
+            setKey('7')
+        }
+    }, [pathname, props.items])
 
     return (
         <>
@@ -66,7 +54,7 @@ export default function index(props: { collapsed: any; toggleCollapsed: any }) {
                     <Image src={collapsedLogo} className={`w-[50px] h-[50px] `} alt="logo" />
                     <Image src={xLogo} alt='logo' className={`${props.collapsed ? 'hidden' : ''}`} />
                 </div>
-                <Menu mode="inline" items={items} className="!border-0 pt-5 flex flex-col gap-3" selectedKeys={[`${key}`]} inlineCollapsed={props.collapsed} onClick={onClick} />
+                <Menu mode="inline" items={props.items} className="!border-0 pt-5 flex flex-col gap-3" selectedKeys={[`${key}`]} inlineCollapsed={props.collapsed} onClick={onClick} />
                 <div className="absolute bottom-0 mx-8 my-10">
                     <button className='overflow-hidden'>
                         <LogoutOutlined />
