@@ -2,6 +2,7 @@
 import { Table, Tag } from 'antd'
 import { useParams, useSearchParams } from 'next/navigation';
 import React, { useState } from 'react'
+import Layout from '../../../_components/mainLayout/layout'
 
 export default function page() {
 
@@ -33,10 +34,12 @@ export default function page() {
         },
     };
     return (
-        <div>
-            <Table dataSource={data} columns={columns} pagination={paginationConfig}
-                className='border-[1px] border-solid border-gray-200 rounded-xl p-5' />
-        </div>
+        <Layout>
+            <div>
+                <Table dataSource={data} columns={columns} pagination={paginationConfig}
+                    className='border-[1px] border-solid border-gray-200 rounded-xl p-5' />
+            </div>
+        </Layout>
     )
 }
 

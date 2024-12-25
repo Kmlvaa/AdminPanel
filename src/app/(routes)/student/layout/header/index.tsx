@@ -36,7 +36,7 @@ export default function index() {
           <ul className='flex flex-row items-center gap-7'>
             <li><Link href='/student/exam' className={`hover:text-blue-500 ${isActive('/student/exam') ? 'border-b-2 border-[#1677FF] text-[#1677FF]' : ''}`}>Imtahanlar</Link></li>
             <li><Link href='/student/about' className={`hover:text-blue-500 ${isActive('/student/about') ? 'border-b-2 border-[#1677FF] text-[#1677FF]' : ''}`}>Biz kimik?</Link></li>
-            <li><Link href='student/FAQ' className={`hover:text-blue-500 ${isActive('/student/FAQ') ? 'border-b-2 border-[#1677FF] text-[#1677FF]' : ''}`}>FAQ</Link></li>
+            <li><Link href='/student/FAQ' className={`hover:text-blue-500 ${isActive('/student/FAQ') ? 'border-b-2 border-[#1677FF] text-[#1677FF]' : ''}`}>FAQ</Link></li>
             <li>
               <Dropdown overlay={menu} trigger={["click"]}>
                 <Button className='border-0'>{language} <DownOutlined /></Button>

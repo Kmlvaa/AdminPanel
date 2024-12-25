@@ -27,7 +27,7 @@ export default function page() {
                 </div>
                 <div className='w-1/2 h-[500px] relative right-0'>
                     <Image src={Clock} alt='clock' className='w-full h-full' />
-                    <Image src={clk2} alt='clock' className='absolute -top-24 left-20 w-40 h-40' />
+                    <Image src={clk2} alt='clock' className='absolute -top-10 left-20 w-36 h-36' />
                     <Image src={clk1} alt='clock' className='absolute top-72 -left-40 w-40 h-40' />
                     <Image src={clk3} alt='clock' className='absolute right-6 bottom-0 w-40 h-40' />
                 </div>
