@@ -11,7 +11,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --mainBgImage: url('../../public/assets/Shape.svg')
+    --mainBgImage: url('../../public/assets/Shape.svg');
+    --studentExamBG: url('../../public/assets/exam.jpeg');
   }
 }
 
@@ -20,6 +21,12 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #4880FF;
+  background-position: center;
+}
+.ExamPage{
+  background-image: var(--studentExamBG);
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 

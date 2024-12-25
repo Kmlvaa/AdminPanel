@@ -1,15 +1,24 @@
+'use client'
 import { DownOutlined, FlagOutlined, MenuFoldOutlined, MenuUnfoldOutlined, SearchOutlined } from '@ant-design/icons'
-import { Button, Dropdown, Input, Menu, MenuProps } from 'antd'
+import { Button, Dropdown, Input, Menu} from 'antd'
 import { Header } from 'antd/es/layout/layout'
 import Image from 'next/image'
 import pp from '/public/assets/pp.png'
+import { useState } from 'react'
 
 export default function index(props: { collapsed: any; toggleCollapsed: React.MouseEventHandler<HTMLElement> | undefined }) {
 
-    const items: MenuProps['items'] = [
-        { key: 1, icon: <FlagOutlined />, label: 'Eng' },
-        { key: 2, icon: <FlagOutlined />, label: 'Az' },
-    ]
+    const [language, setLanguage] = useState('Eng');
+    
+      const handleLanguage = (e: any) => {
+        setLanguage(e.key)
+      }
+      const menu = (
+        <Menu onClick={handleLanguage}>
+          <Menu.Item key="Eng"><FlagOutlined /> Eng</Menu.Item>
+          <Menu.Item key="Az"><FlagOutlined /> Az</Menu.Item>
+        </Menu>
+      );
 
     return (
         <Header className={`bg-white top-0 right-0 h-20 ${props.collapsed ? 'left-[100px]' : 'left-[250px]'} transition-all fixed z-10 flex items-center justify-between py-3 px-12 leading-normal`}>
@@ -21,8 +30,8 @@ export default function index(props: { collapsed: any; toggleCollapsed: React.Mo
             </div>
             <div className='w-1/3 max-lg:w-1/2 flex flex-row items-center justify-center gap-3'>
                 <div>
-                    <Dropdown overlay={<Menu items={items} />} trigger={["click"]}>
-                        <Button className='border-0'>Language <DownOutlined /></Button>
+                    <Dropdown overlay={menu} trigger={["click"]}>
+                        <Button className='border-0'>{language} <DownOutlined /></Button>
                     </Dropdown>
                 </div>
                 <div className='flex flex-row items-center justify-center gap-2'>

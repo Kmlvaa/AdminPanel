@@ -10,7 +10,7 @@ import SalesChart from "./_components/salesChart";
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col py-20">
       <div className="flex flex-row items-center justify-between">
         <div>
           <Header header='Dashboard' />

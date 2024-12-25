@@ -23,7 +23,10 @@ export default function RootLayout({
     "/registerStudent",
     "/capcha",
     "/student",
-    "/404"
+    "/student/exam",
+    "/student/about",
+    "/student/FAQ",
+    '/not-found'
   ];
 
   const pathname = usePathname();
@@ -43,6 +46,7 @@ export default function RootLayout({
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
+  
   let items = []
 
   if(pathname.includes('/dashboard')){
