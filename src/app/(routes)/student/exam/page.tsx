@@ -19,11 +19,40 @@ export default function page() {
                     </p>
                 </div>
                 <div className='w-full flex flex-row gap-5 flex-wrap items-center justify-center'>
-                    <Card title='Backend programlasdirma' amount='24.99' date='10.12.2024' fullname='Aqil Quliyev' image='/assets/card1.svg' />
-                    <Card title='Backend programlasdirma' amount='24.99' date='10.12.2024' fullname='Aqil Quliyev' image='/assets/card2.svg' />
-                    <Card title='Backend programlasdirma' amount='24.99' date='10.12.2024' fullname='Aqil Quliyev' image='/assets/card3.svg' />
+                    {card?.map((card) => {
+                        return (
+                            <Card title={card.title} amount={card.amount} date={card.date} fullname={card.fullname} image={card.image} examId={card.id}/>
+                        );
+                    })}
                 </div>
             </div>
         </Layout>
     )
 }
+
+const card = [
+    {
+        id: 1,
+        title: 'Frontend programlasdirma',
+        amount: '24.99',
+        date: '10.12.2024',
+        fullname: 'Aqil Quliyev',
+        image: '/assets/card1.svg'
+    },
+    {
+        id: 2,
+        title: 'Backend programlasdirma',
+        amount: '24.99',
+        date: '10.12.2024',
+        fullname: 'Aqil Quliyev',
+        image: '/assets/card2.svg'
+    },
+    {
+        id: 3,
+        title: 'Backend programlasdirma',
+        amount: '24.99',
+        date: '10.12.2024',
+        fullname: 'Aqil Quliyev',
+        image: '/assets/card3.svg'
+    },
+]

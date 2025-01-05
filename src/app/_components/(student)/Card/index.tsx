@@ -1,9 +1,12 @@
+'use client'
 import { CloseCircleOutlined } from '@ant-design/icons'
 import { Button, Card } from 'antd'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 export default function index(props: any) {
+    const router = useRouter()
     return (
         <Card className='w-auto h-full rounded-lg p-3 hover:bg-gray-50 hover:border-blue-200'>
             <Image src={props.image} alt='image card' width={250} height={250} className='cover w-64 h-64' />
@@ -22,7 +25,11 @@ export default function index(props: any) {
                         <p className=''>{props.date}</p>
                     </div>
                     <div>
-                        <Button className='py-1 px-3 border-[1px] border-red-600 text-red-600 font-semibold hover:!bg-red-600 hover:!text-white hover:!border-red-600'>Imtahanı al</Button>
+                        <Button className='py-1 px-3 border-[1px] border-red-600 text-red-600 font-semibold hover:!bg-red-600 hover:!text-white hover:!border-red-600'
+                            onClick={() => router.push(`http://localhost:3000//student/exam/${props.examId}`)}
+                        >
+                            Imtahanı al
+                        </Button>
                     </div>
                 </div>
             </div>
