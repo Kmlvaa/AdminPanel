@@ -12,9 +12,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      // backgroundImage: {
-      //   mainBackground: "url('./src/assets/Main Bg.svg')",
-      // },
+      backgroundImage: {
+        'blue-gradient': 'linear-gradient(to right, #2563eb, #1d4ed8)',
+        'repeating-radial-gradient': 'repeating-radial-gradient(circle closest-corner at 5% 1px, #1e3a8a, #1e3a8a 50px, #60a5fa 50px, #60a5fa 100px)',
+      },
+      backgroundSize: {
+        'wave-pattern': '200px 200px',
+      },
     },
   },
   plugins: [],

@@ -13,7 +13,7 @@ import Link from 'next/link'
 export default function page() {
     return (
         <Layout>
-            <div className='flex flex-row justify-between px-20'>
+            <div className='flex flex-row justify-between px-20 py-10'>
                 <div className='w-1/2 flex flex-col items-start gap-16 py-20'>
                     <div className='flex flex-col gap-5 justify-end'>
                         <h1 className='font-bold text-6xl whitespace-pre-wrap'>
